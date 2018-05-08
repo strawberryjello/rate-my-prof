@@ -5,6 +5,6 @@ class CreateMyClasses < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :my_classes, :name
+    add_index :my_classes, :name, unique: true
   end
 end
