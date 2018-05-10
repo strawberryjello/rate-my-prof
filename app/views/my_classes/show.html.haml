@@ -5,8 +5,18 @@
   = @my_class.name
 
 %h3 Professors
-- @my_class.professors.each do |p|
-  %p= p.full_name
+%table
+  %thead
+    %tr
+      %th Name
+      %th Average Rating
+      %th
+  %tbody
+    - @my_class.professors.each do |p|
+      %tr
+        %td= p.full_name
+        %td
+        %td= link_to 'Review This Professor', new_professor_review_path(p.id)
 
 = link_to 'Edit', edit_my_class_path(@my_class) |
 = link_to 'Back', my_classes_path

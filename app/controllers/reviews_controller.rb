@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      redirect_to @review, notice: 'Review was successfully created.'
+      redirect_to professor_path(@review.professor.id), notice: 'Review was successfully created.'
     else
       render :new
     end
