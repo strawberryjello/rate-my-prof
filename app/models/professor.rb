@@ -3,4 +3,8 @@ class Professor < ApplicationRecord
   validates :last_name, presence: true
 
   has_and_belongs_to_many :my_classes
+
+  def full_name
+    "#{last_name}, #{first_name}"
+  end
 end
