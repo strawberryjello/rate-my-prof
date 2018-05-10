@@ -1,6 +1,6 @@
 class MyClassesController < ApplicationController
   before_action :set_my_class, only: [:show, :edit, :update, :destroy]
-  before_action :set_professors, only: [:new, :create]
+  before_action :set_professors, only: [:new, :create, :edit, :update]
 
   # GET /my_classes
   def index
@@ -23,7 +23,6 @@ class MyClassesController < ApplicationController
   # POST /my_classes
   def create
     @my_class = MyClass.new(my_class_params)
-    professor_ids = params[:my_class][:professor_ids].reject { |id| id.blank? }
 
     if @my_class.save
       @my_class.professor_ids = professor_ids
@@ -36,6 +35,7 @@ class MyClassesController < ApplicationController
   # PATCH/PUT /my_classes/1
   def update
     if @my_class.update(my_class_params)
+      @my_class.professor_ids = professor_ids
       redirect_to @my_class, notice: 'My class was successfully updated.'
     else
       render :edit
@@ -61,5 +61,9 @@ class MyClassesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def my_class_params
       params.require(:my_class).permit(:name)
+    end
+
+    def professor_ids
+      params[:my_class][:professor_ids].reject { |id| id.blank? }
     end
 end
