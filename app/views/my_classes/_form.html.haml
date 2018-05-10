@@ -13,5 +13,9 @@
     = form.label :name
     = form.text_field :name
 
+  .field
+    = form.label 'Professors'
+    = form.collection_check_boxes(:professor_ids, @professors, :id, :full_name)
+
   .actions
     = form.submit

@@ -1,5 +1,6 @@
 class MyClassesController < ApplicationController
   before_action :set_my_class, only: [:show, :edit, :update, :destroy]
+  before_action :set_professors, only: [:new, :create]
 
   # GET /my_classes
   def index
@@ -22,8 +23,10 @@ class MyClassesController < ApplicationController
   # POST /my_classes
   def create
     @my_class = MyClass.new(my_class_params)
+    professor_ids = params[:my_class][:professor_ids].reject { |id| id.blank? }
 
     if @my_class.save
+      @my_class.professor_ids = professor_ids
       redirect_to @my_class, notice: 'My class was successfully created.'
     else
       render :new
@@ -49,6 +52,10 @@ class MyClassesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_my_class
       @my_class = MyClass.find(params[:id])
+    end
+
+    def set_professors
+      @professors = Professor.all
     end
 
     # Only allow a trusted parameter "white list" through.
