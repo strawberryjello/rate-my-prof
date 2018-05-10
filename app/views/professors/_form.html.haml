@@ -13,5 +13,10 @@
   .field
     = form.label :last_name
     = form.text_field :last_name
+
+  .field
+    = form.label 'Classes'
+    = form.collection_check_boxes(:my_class_ids, @my_classes, :id, :name)
+
   .actions
     = form.submit

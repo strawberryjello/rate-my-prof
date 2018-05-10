@@ -5,6 +5,11 @@
 %p
   %strong Last name:
   = @professor.last_name
+
+%h3 Classes
+- @professor.my_classes.each do |c|
+  %p= c.name
+
 = link_to 'Edit', edit_professor_path(@professor)
 |
 = link_to 'Back', professors_path
