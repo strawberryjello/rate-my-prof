@@ -15,8 +15,8 @@
     = form.label 'Class'
     = form.collection_select :my_class_id, @my_classes, :id, :name
   .field
-    = form.label :rating
-    = form.text_field :rating
+    = form.label 'Rating (5 - excellent, 1 - worst)'
+    = form.select :rating, options_for_select(Review::RATING_SCALE)
   .field
     = form.label :description
     = form.text_area :description
