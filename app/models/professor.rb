@@ -8,4 +8,8 @@ class Professor < ApplicationRecord
   def full_name
     "#{last_name}, #{first_name}"
   end
+
+  def average_rating
+    reviews.average(:rating).truncate(2)
+  end
 end
