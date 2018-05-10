@@ -54,10 +54,6 @@ class MyClassesController < ApplicationController
       @my_class = MyClass.find(params[:id])
     end
 
-    def set_professors
-      @professors = Professor.all
-    end
-
     # Only allow a trusted parameter "white list" through.
     def my_class_params
       params.require(:my_class).permit(:name)
