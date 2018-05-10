@@ -6,5 +6,8 @@ class CreateReviews < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_reference :reviews, :professor
+    add_reference :reviews, :my_class
   end
 end
