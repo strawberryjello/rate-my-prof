@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_classes, only: [:new, :create, :edit, :update]
-  before_action :set_professors, only: [:new, :create, :edit, :update]
+  before_action :set_professor, only: [:new, :create, :edit, :update]
 
   # GET /reviews
   def index
@@ -51,6 +50,10 @@ class ReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
+    end
+
+    def set_professor
+      @professor = Professor.find(params[:professor_id])
     end
 
     # Only allow a trusted parameter "white list" through.

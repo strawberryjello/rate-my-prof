@@ -8,12 +8,12 @@
         - review.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = form.label :professor
-    = form.collection_select :professor_id, @professors, :id, :full_name
+  %h3 Professor: #{@professor.full_name}
+  = hidden_field_tag 'review[professor_id]', @professor.id
+
   .field
     = form.label 'Class'
-    = form.collection_select :my_class_id, @my_classes, :id, :name
+    = form.collection_select :my_class_id, @professor.my_classes, :id, :name
   .field
     = form.label 'Rating (5 - excellent, 1 - worst)'
     = form.select :rating, options_for_select(Review::RATING_SCALE)
