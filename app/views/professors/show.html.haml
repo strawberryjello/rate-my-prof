@@ -6,6 +6,10 @@
   %strong Last name:
   = @professor.last_name
 
+%h3 Average Overall Rating: #{@professor.average_rating}
+
+= link_to 'View All Reviews', professor_reviews_path(@professor)
+
 %h3 Classes
 %table
   %thead

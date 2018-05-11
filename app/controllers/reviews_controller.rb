@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, only: [:new, :create, :edit, :update]
+  before_action :set_professor, only: [:index, :new, :create, :edit, :update]
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    @reviews = @professor.reviews
   end
 
   # GET /reviews/1
