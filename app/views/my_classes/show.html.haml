@@ -15,7 +15,7 @@
     - @my_class.professors.each do |p|
       %tr
         %td= p.full_name
-        %td= p.average_rating
+        %td= p.average_rating_for(@my_class)
         %td= link_to 'Review This Professor', new_professor_review_path(p.id)
 
 = link_to 'Edit', edit_my_class_path(@my_class) |
