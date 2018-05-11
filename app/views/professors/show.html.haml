@@ -7,8 +7,16 @@
   = @professor.last_name
 
 %h3 Classes
-- @professor.my_classes.each do |c|
-  %p= link_to c.name, my_class_path(c)
+%table
+  %thead
+    %tr
+      %th Class
+      %th Average Rating
+  %tbody
+    - @professor.my_classes.each do |c|
+      %tr
+        %td= link_to c.name, my_class_path(c)
+        %td= @professor.average_rating_for(c)
 
 = link_to 'Edit', edit_professor_path(@professor)
 |
