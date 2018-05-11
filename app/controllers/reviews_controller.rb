@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_professor, only: [:index, :new, :create, :edit, :update]
+  before_action :set_professor
 
   # GET /reviews
   def index
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   def destroy
     @review.destroy
-    redirect_to reviews_url, notice: 'Review was successfully destroyed.'
+    redirect_to professor_reviews_url(@professor), notice: 'Review was successfully destroyed.'
   end
 
   private
