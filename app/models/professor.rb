@@ -9,6 +9,10 @@ class Professor < ApplicationRecord
     "#{last_name}, #{first_name}"
   end
 
+  def average_rating_for(my_class)
+    reviews.where({my_class_id: my_class.id}).average(:rating)
+  end
+
   def average_rating
     reviews.average(:rating).truncate(2)
   end
