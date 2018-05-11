@@ -14,6 +14,6 @@ class Professor < ApplicationRecord
   end
 
   def average_rating
-    reviews.average(:rating).truncate(2)
+    reviews.average(:rating).try(:truncate, 2)
   end
 end
