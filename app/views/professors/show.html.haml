@@ -8,7 +8,7 @@
 
 %h3 Classes
 - @professor.my_classes.each do |c|
-  %p= c.name
+  %p= link_to c.name, my_class_path(c)
 
 = link_to 'Edit', edit_professor_path(@professor)
 |
