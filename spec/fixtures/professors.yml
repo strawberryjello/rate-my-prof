@@ -1,0 +1,13 @@
+no_class:
+  first_name: Kumiko
+  last_name: Yamaguchi
+
+one_reviewed_class:
+  first_name: Dewey
+  last_name: Finn
+  my_classes: music
+
+one_unreviewed_class:
+  first_name: Richard
+  last_name: Feynman
+  my_classes: physics
