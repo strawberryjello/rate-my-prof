@@ -1,6 +1,16 @@
+multiple_classes_multiple_reviews:
+  first_name: Ada
+  last_name: Palmer
+  my_classes: machiavelli, medieval_history
+
 no_class:
   first_name: Kumiko
   last_name: Yamaguchi
+
+one_class_multiple_reviews:
+  first_name: Henry
+  last_name: Jones
+  my_classes: archaeology
 
 one_reviewed_class:
   first_name: Dewey

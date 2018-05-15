@@ -33,5 +33,24 @@ RSpec.describe Professor do
         expect(prof.average_rating_for(my_class)).to eq(review.rating)
       end
     end
+
+    context 'with 1 reviewed class that has multiple reviews' do
+      let(:prof) { professors(:one_class_multiple_reviews) }
+
+      it 'returns the average rating for the reviews' do
+        my_class = prof.my_classes.first
+
+        expect(prof.average_rating_for(my_class)).to eq(2.33)
+      end
+    end
+
+    context 'with multiple reviewed classes with multiple reviews' do
+      let(:prof) { professors(:multiple_classes_multiple_reviews) }
+      let(:my_class) { my_classes(:machiavelli) }
+
+      it 'returns the average rating for the reviews' do
+        expect(prof.average_rating_for(my_class)).to eq(4.33)
+      end
+    end
   end
 end

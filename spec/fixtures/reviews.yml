@@ -1,3 +1,43 @@
+arch_jones_1:
+  rating: 1
+  professor: one_class_multiple_reviews
+  my_class: archaeology
+
+arch_jones_2:
+  rating: 2
+  professor: one_class_multiple_reviews
+  my_class: archaeology
+
+arch_jones_4:
+  rating: 4
+  professor: one_class_multiple_reviews
+  my_class: archaeology
+
+mach_palmer_4_0:
+  rating: 4
+  professor: multiple_classes_multiple_reviews
+  my_class: machiavelli
+
+mach_palmer_4_1:
+  rating: 4
+  professor: multiple_classes_multiple_reviews
+  my_class: machiavelli
+
+mach_palmer_5:
+  rating: 5
+  professor: multiple_classes_multiple_reviews
+  my_class: machiavelli
+
+mh_palmer_3:
+  rating: 3
+  professor: multiple_classes_multiple_reviews
+  my_class: medieval_history
+
+mh_palmer_4:
+  rating: 4
+  professor: multiple_classes_multiple_reviews
+  my_class: medieval_history
+
 music_finn:
   rating: 5
   professor: one_reviewed_class
