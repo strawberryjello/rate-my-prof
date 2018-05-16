@@ -10,4 +10,5 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = yield
+    %main.container{:role => 'main'}
+      = yield
