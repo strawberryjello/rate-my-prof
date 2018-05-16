@@ -10,5 +10,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
+    %nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+      %a.navbar-brand{href: '#'} RateMyProf
+      .collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          %li.nav-item.active
+            = link_to 'Classes', my_classes_path, {class: 'nav-link'}
+          %li.nav-item.active
+            = link_to 'Professors', professors_path, {class: 'nav-link'}
+
     %main.container{role: 'main'}
       = yield
