@@ -26,4 +26,6 @@
               = link_to 'New Professor', new_professor_path, {class: 'dropdown-item'}
 
     %main.container{role: 'main'}
+      - if notice
+        #notice.alert.alert-info{role: 'alert'}= notice
       = yield
