@@ -1,7 +1,7 @@
 = form_with(model: review, url: professor_reviews_path, local: true) do |form|
   - if review.errors.any?
-    #error_explanation
-      %h2
+    #error_explanation.alert.alert-danger
+      %b
         = pluralize(review.errors.count, "error")
         prohibited this review from being saved:
       %ul

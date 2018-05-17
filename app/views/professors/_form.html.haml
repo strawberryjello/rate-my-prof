@@ -1,7 +1,7 @@
 = form_with(model: professor, local: true) do |form|
   - if professor.errors.any?
-    #error_explanation
-      %h2
+    #error_explanation.alert.alert-danger
+      %b
         = pluralize(professor.errors.count, "error")
         prohibited this professor from being saved:
       %ul

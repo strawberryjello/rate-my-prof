@@ -1,9 +1,9 @@
 = form_with(model: my_class, local: true) do |form|
   - if my_class.errors.any?
-    #error_explanation
-      %h2
+    #error_explanation.alert.alert-danger
+      %b
         = pluralize(my_class.errors.count, "error")
-        prohibited this my_class from being saved:
+        prohibited this class from being saved:
 
       %ul
       - my_class.errors.full_messages.each do |message|
