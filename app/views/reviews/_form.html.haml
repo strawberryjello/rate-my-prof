@@ -11,14 +11,14 @@
   %h3 Professor: #{@professor.full_name}
   = hidden_field_tag 'review[professor_id]', @professor.id
 
-  .field
+  .form-group
     = form.label 'Class'
-    = form.collection_select :my_class_id, @professor.my_classes, :id, :name
-  .field
+    = form.collection_select :my_class_id, @professor.my_classes, :id, :name, {}, {class: 'form-control'}
+  .form-group
     = form.label 'Rating (5 - excellent, 1 - worst)'
-    = form.select :rating, options_for_select(Review::RATING_SCALE)
-  .field
+    = form.select :rating, options_for_select(Review::RATING_SCALE), {}, {class: 'form-control'}
+  .form-group
     = form.label :description
-    = form.text_area :description
-  .actions
-    = form.submit
+    = form.text_area :description, {class: 'form-control'}
+
+  = submit_tag 'Submit', class: 'btn btn-primary'
