@@ -26,7 +26,7 @@ class MyClassesController < ApplicationController
 
     if @my_class.save
       @my_class.professor_ids = professor_ids
-      redirect_to @my_class, notice: 'My class was successfully created.'
+      redirect_to @my_class, notice: 'Class was successfully created.'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class MyClassesController < ApplicationController
   def update
     if @my_class.update(my_class_params)
       @my_class.professor_ids = professor_ids
-      redirect_to @my_class, notice: 'My class was successfully updated.'
+      redirect_to @my_class, notice: 'Class was successfully updated.'
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class MyClassesController < ApplicationController
   # DELETE /my_classes/1
   def destroy
     @my_class.destroy
-    redirect_to my_classes_url, notice: 'My class was successfully destroyed.'
+    redirect_to my_classes_url, notice: 'Class was successfully deleted.'
   end
 
   private
