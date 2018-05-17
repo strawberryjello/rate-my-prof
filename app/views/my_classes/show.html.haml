@@ -1,14 +1,16 @@
 %p#notice= notice
 
-%p
-  %strong Name:
-  = @my_class.name
+%h3= @my_class.name
 
-%h3 Professors
-%table
+= link_to 'Edit', edit_my_class_path(@my_class), {class: 'btn btn-secondary btn-sm', role: 'button'}
+
+%br/
+%br/
+
+%table.table
   %thead
     %tr
-      %th Name
+      %th Professor
       %th Average Rating
       %th
   %tbody
@@ -16,7 +18,4 @@
       %tr
         %td= link_to p.full_name, professor_path(p)
         %td= p.average_rating_for(@my_class)
-        %td= link_to 'Review This Professor', new_professor_review_path(p.id)
-
-= link_to 'Edit', edit_my_class_path(@my_class) |
-= link_to 'Back', my_classes_path
+        %td= link_to 'Review This Professor', new_professor_review_path(p.id), {class: 'btn btn-primary btn-sm', role: 'button'}
