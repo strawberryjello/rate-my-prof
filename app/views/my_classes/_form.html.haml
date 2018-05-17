@@ -9,13 +9,14 @@
       - my_class.errors.full_messages.each do |message|
         %li= message
 
-  .field
+  .form-group
     = form.label :name
-    = form.text_field :name
+    = form.text_field :name, {class: 'form-control'}
 
-  .field
-    = form.label 'Professors'
-    = form.collection_check_boxes(:professor_ids, @professors, :id, :full_name)
+  .form-group.form-check
+    = form.collection_check_boxes(:professor_ids, @professors, :id, :full_name) do |b|
+      = b.check_box(class: 'form-check-input')
+      = b.label(class: 'form-check-label')
+      %br/
 
-  .actions
-    = form.submit
+  = submit_tag 'Submit', class: 'btn btn-primary'
