@@ -1,8 +1,8 @@
 %p#notice= notice
 
-%h1 My Classes
+%h3 Classes
 
-%table
+%table.table
   %thead
     %tr
       %th Name
@@ -15,8 +15,3 @@
         %td= link_to 'Show', my_class
         %td= link_to 'Edit', edit_my_class_path(my_class)
         %td= link_to 'Destroy', my_class, method: :delete, data: { confirm: 'Are you sure?' }
-
-
-%br/
-
-= link_to 'New My Class', new_my_class_path
