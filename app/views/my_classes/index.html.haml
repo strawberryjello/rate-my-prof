@@ -4,12 +4,11 @@
   %thead
     %tr
       %th Name
-      %th{:colspan => "3"}
+      %th{:colspan => "2"}
 
   %tbody
     - @my_classes.each do |my_class|
       %tr
-        %td= my_class.name
-        %td= link_to 'Show', my_class
-        %td= link_to 'Edit', edit_my_class_path(my_class)
-        %td= link_to 'Destroy', my_class, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to my_class.name, my_class
+        %td= link_to 'Edit', edit_my_class_path(my_class), {class: 'btn btn-secondary btn-sm', role: 'button'}
+        %td= link_to 'Delete', my_class, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm', role: 'button'

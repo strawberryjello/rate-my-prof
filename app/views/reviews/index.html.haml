@@ -12,4 +12,4 @@
         %td= review.my_class.name
         %td= review.rating
         %td= review.description
-        %td= link_to 'Destroy', professor_review_path(@professor, review), method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Delete', professor_review_path(@professor, review), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm', role: 'button'
