@@ -45,7 +45,7 @@ class ProfessorsController < ApplicationController
   # DELETE /professors/1
   def destroy
     @professor.destroy
-    redirect_to professors_url, notice: 'Professor was successfully destroyed.'
+    redirect_to professors_url, notice: 'Professor was successfully deleted.'
   end
 
   private
