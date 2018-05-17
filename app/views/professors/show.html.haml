@@ -1,17 +1,16 @@
 %p#notice= notice
+%h3= @professor.full_name
+
 %p
-  %strong First name:
-  = @professor.first_name
-%p
-  %strong Last name:
-  = @professor.last_name
+  %b Average Overall Rating: #{@professor.average_rating} (#{@professor.reviews.count} Reviews)
 
-%h3 Average Overall Rating: #{@professor.average_rating} (#{@professor.reviews.count} Reviews)
+= link_to 'View All Reviews', professor_reviews_path(@professor), {class: 'btn btn-primary btn-sm', role: 'button'}
+= link_to 'Edit', edit_professor_path(@professor), {class: 'btn btn-secondary btn-sm', role: 'button'}
 
-= link_to 'View All Reviews', professor_reviews_path(@professor)
+%br/
+%br/
 
-%h3 Classes
-%table
+%table.table
   %thead
     %tr
       %th Class
@@ -21,7 +20,3 @@
       %tr
         %td= link_to c.name, my_class_path(c)
         %td= @professor.average_rating_for(c)
-
-= link_to 'Edit', edit_professor_path(@professor)
-|
-= link_to 'Back', professors_path
