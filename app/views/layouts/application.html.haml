@@ -17,12 +17,12 @@
           %li.nav-item.dropdown
             %a#myclass-dropdown.nav-link.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}} Classes
             .dropdown-menu{aria: {labelledby: 'myclass-dropdown'}}
-              = link_to 'Classes', my_classes_path, {class: 'dropdown-item'}
+              = link_to 'Class List', my_classes_path, {class: 'dropdown-item'}
               = link_to 'New Class', new_my_class_path, {class: 'dropdown-item'}
           %li.nav-item.dropdown
             %a#prof-dropdown.nav-link.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}, aria: {haspopup: 'true', expanded: 'false'}} Professors
             .dropdown-menu{aria: {labelledby: 'prof-dropdown'}}
-              = link_to 'Professors', professors_path, {class: 'dropdown-item'}
+              = link_to 'Professor List', professors_path, {class: 'dropdown-item'}
               = link_to 'New Professor', new_professor_path, {class: 'dropdown-item'}
 
     %main.container{role: 'main'}
