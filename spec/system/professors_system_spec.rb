@@ -18,8 +18,6 @@ RSpec.describe "Professor CRUD", type: :system do
     end
 
     it "lets me view that professor's classes" do
-      click_link "Medieval History"
-
       expect(page).to have_text("Medieval History")
     end
 
