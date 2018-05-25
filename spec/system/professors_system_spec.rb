@@ -24,6 +24,12 @@ RSpec.describe "Professor CRUD", type: :system do
 
       expect(page).not_to have_text("Palmer, Ada")
     end
+
+    it "lets me view that professor's reviews" do
+      click_link "View All Reviews"
+
+      expect(page).to have_text("Rating")
+    end
   end
 
   context "upon displaying the form for updating a professor" do
