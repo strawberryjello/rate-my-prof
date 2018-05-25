@@ -23,6 +23,17 @@ RSpec.describe "MyClass CRUD", type: :system do
 
       expect(page).not_to have_text("Archaeology")
     end
+
+    it "lets me review a professor who teaches that class" do
+      click_link "Review This Professor"
+
+      find("#review_rating").first(:option, "4").select_option
+      fill_in "Description", with: "not boring"
+
+      click_button "Submit"
+
+      expect(page).to have_text("Review was successfully created.")
+    end
   end
 
   context "upon displaying the form for updating a class" do
