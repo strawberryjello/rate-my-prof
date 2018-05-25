@@ -4,11 +4,9 @@ require 'support/capybara'
 RSpec.describe "Professor CRUD", type: :system do
   context "upon displaying a professor's page" do
     before do
-      visit root_path
+      open_professor_dropdown
 
-      click_link "Professors"
       click_link "Professor List"
-
       click_link "Palmer, Ada"
     end
 
@@ -30,9 +28,8 @@ RSpec.describe "Professor CRUD", type: :system do
 
   context "upon displaying the form for updating a professor" do
     before do
-      visit root_path
+      open_professor_dropdown
 
-      click_link "Professors"
       click_link "Professor List"
 
       click_link "Finn, Dewey"
@@ -58,9 +55,8 @@ RSpec.describe "Professor CRUD", type: :system do
 
   context "upon displaying the form for creating a professor" do
     before do
-      visit root_path
+      open_professor_dropdown
 
-      click_link "Professors"
       click_link "New Professor"
     end
 
@@ -80,5 +76,12 @@ RSpec.describe "Professor CRUD", type: :system do
       expect(page).to have_text("First name can't be blank")
       expect(page).to have_text("Last name can't be blank")
     end
+  end
+
+  private
+
+  def open_professor_dropdown
+    visit root_path
+    click_link "Professors"
   end
 end
