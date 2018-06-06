@@ -15,8 +15,10 @@
     = form.label 'Class'
     = form.collection_select :my_class_id, @professor.my_classes, :id, :name, {}, {class: 'form-control'}
   .form-group
-    = form.label 'Rating (5 - excellent, 1 - worst)'
-    = form.select :rating, options_for_select(Review::RATING_SCALE), {}, {class: 'form-control'}
+    %p Rating (5 - excellent, 1 - worst)
+    - Review::RATING_SCALE.each do |r|
+      = form.label r
+      = form.radio_button :rating, r
   .form-group
     = form.label :description
     = form.text_area :description, {class: 'form-control'}
